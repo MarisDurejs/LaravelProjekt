@@ -17,4 +17,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::controller()
+Route::get('/page', function () {
+    $name = 'Maris';
+    return view('page', [
+        'name' => $name,
+    ]);
+});
