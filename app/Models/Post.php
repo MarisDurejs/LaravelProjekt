@@ -14,5 +14,4 @@ class Post extends Model
         'body',
         'author_name',
     ];
-    protected $table='posts';
 }

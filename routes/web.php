@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\PageController;
 use Illuminate\Support\Facades\Route;
+use App\Models\Post;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,3 +27,15 @@ Route::get('/page', function () {
 });
 
 Route::get('/page', [PageController::class, 'index']);
+
+Route::get('/greetings', function() {
+        $name = 'Maris';
+        return view('greetings' , [
+            'name' => $name, 
+        ]);
+});
+
+Route::get('/posts', function() {
+    $posts = Post::get();
+    dd($posts);
+});
