@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Database\Factories\PostFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -14,5 +15,10 @@ class Post extends Model
         'body',
         'author_name',
     ];
-    protected $table='posts';
+
+
+    protected static function newFactory(): PostFactory
+    {
+        return new PostFactory();
+    }
 }
