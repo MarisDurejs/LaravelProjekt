@@ -15,13 +15,15 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-
+            $this -> call([
+                PostSeeder::class,
+            ]);
        $post = Post::create([
-                'title' => 'Title 1',
-                'body' => 'Body 1',
-                'author_name' => 'Maris',
+           'title' => 'Title 1',
+           'body' => 'body 1',
+           'author_name' => 'Maris',
        ]);
-
+       
        $post->save();
     }
 }
